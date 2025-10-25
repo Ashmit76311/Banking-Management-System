@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "build bank_system",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "taskkill /IM bank_system.exe /F >nul 2>&1 & del /f /q bank_system.exe & g++ -std=c++17 bank_system.cpp -o bank_system.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
