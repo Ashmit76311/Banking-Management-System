@@ -85,7 +85,9 @@ Copy code
 Enter the number corresponding to the desired action, and follow the prompts.
 
 ## 🪐 Demo Preview 
-![Banking Management System](assets/screenshot.png)
+
+### Menu Screen
+![Menu Screen](assets/screenshot.png)
 
 🚀 Future Enhancements
 🔹 Add login authentication for security
