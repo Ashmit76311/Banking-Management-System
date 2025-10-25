@@ -11,7 +11,6 @@ This project demonstrates strong **Object-Oriented Programming (OOP)** concepts,
 - [Tech Stack](#-tech-stack)
 - [Setup Instructions](#-setup-instructions)
 - [Usage](#-usage)
-- [Demo](#-demo)
 - [Future Enhancements](#-future-enhancements)
 - [Author](#-author)
 
@@ -83,9 +82,6 @@ Copy code
 7. Modify An Account
 8. Exit
 Enter the number corresponding to the desired action, and follow the prompts.
-
-## 🪐 Demo Preview 
-![Menu Screen](assets/screenshot.png)
 
 🚀 Future Enhancements
 🔹 Add login authentication for security
