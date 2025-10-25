@@ -85,8 +85,6 @@ Copy code
 Enter the number corresponding to the desired action, and follow the prompts.
 
 ## 🪐 Demo Preview 
-
-### Menu Screen
 ![Menu Screen](assets/screenshot.png)
 
 🚀 Future Enhancements
