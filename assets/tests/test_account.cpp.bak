@@ -1,0 +1,34 @@
+#include "gtest/gtest.h"
+#include "../account.h" 
+TEST(AccountTest, InitialBalance) {
+    Account a("Sam", 1000);
+    EXPECT_EQ(a.get_balance(), 1000);
+    EXPECT_EQ(a.get_name(), "Sam");
+}
+
+TEST(AccountTest, DepositIncreasesBalance) {
+    Account a("Ashmit", 500);
+    a.deposit(250);
+    EXPECT_EQ(a.get_balance(), 750);
+}
+
+TEST(AccountTest, WithdrawSuccess) {
+    Account a("Parul", 300);
+    bool ok = a.withdraw(200);
+    EXPECT_TRUE(ok);
+    EXPECT_EQ(a.get_balance(), 100);
+}
+
+TEST(AccountTest, WithdrawFailInsufficient) {
+    Account a("Seema", 100);
+    bool ok = a.withdraw(200);
+    EXPECT_FALSE(ok);
+    EXPECT_EQ(a.get_balance(), 100);
+}
+
+TEST(AccountTest, WithdrawInvalidAmount) {
+    Account a("Ram", 100);
+    EXPECT_FALSE(a.withdraw(0));
+    EXPECT_FALSE(a.withdraw(-50));
+    EXPECT_EQ(a.get_balance(), 100);
+}
