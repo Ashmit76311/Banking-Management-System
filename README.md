@@ -2,6 +2,8 @@
 
 [![Build & Test](https://github.com/Ashmit76311/Banking-Management-System/actions/workflows/ci.yml/badge.svg)](https://github.com/Ashmit76311/Banking-Management-System/actions/workflows/ci.yml)
 
+[![codecov](https://codecov.io/gh/Ashmit76311/Banking-Management-System/branch/main/graph/badge.svg?token=)](https://codecov.io/gh/Ashmit76311/Banking-Management-System)
+
 A modern, menu-driven **C++ console application** that simulates basic banking operations like account creation, deposits, withdrawals, and balance inquiries.  
 This project demonstrates strong **Object-Oriented Programming (OOP)** concepts, file handling, and structured code design in C++.
 
