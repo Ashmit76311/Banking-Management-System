@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+﻿cmake_minimum_required(VERSION 3.14)
 project(BankingSystem LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -12,14 +12,7 @@ add_executable(bank_system bank_system.cpp)
 target_link_libraries(bank_system PRIVATE banklib)
 
 # ---------- GoogleTest via FetchContent ----------
-include(FetchContent)
-FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/refs/heads/main.zip
-)
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
-
+add_subdirectory(${CMAKE_SOURCE_DIR}/extern/googletest EXCLUDE_FROM_ALL)
 enable_testing()
 
 # Point to the actual test source file in your repo (assets/tests)
@@ -32,3 +25,5 @@ target_link_libraries(unit_tests PRIVATE GTest::gtest_main banklib)
 
 # Register the tests with CTest
 add_test(NAME unit_tests COMMAND unit_tests)
+
+
