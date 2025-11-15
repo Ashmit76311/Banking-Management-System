@@ -1,4 +1,4 @@
-name: CMake Build, Test & Coverage
+﻿name: CMake Build, Test & Coverage
 
 on:
   push:
@@ -10,7 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # ensure lcov output isn't huge
       LCOV_LINE_LEN: 32768
 
     steps:
@@ -33,14 +32,14 @@ jobs:
       - name: Build
         run: cmake --build build --config Debug
 
-      - name: Run tests (instrumented binary will produce .gcda files)
+      - name: Run tests (instrumented)
         run: ctest --test-dir build -C Debug --output-on-failure
 
       - name: Capture coverage with lcov
         run: |
-          # generate raw coverage data
           cd build
-          lcov --directory . --capture --output-file coverage.info
+          # capture coverage using lcov, instruct geninfo to ignore certain warnings/errors
+          lcov --directory . --capture --output-file coverage.info --rc geninfo_unexecuted_blocks=1 --rc geninfo_ignore_errors=mismatch
           # remove system and third-party files from report
           lcov --remove coverage.info '/usr/*' '*/_deps/*' --output-file coverage.info
           lcov --list coverage.info
@@ -52,4 +51,3 @@ jobs:
           files: build/coverage.info
           fail_ci_if_error: false
           verbose: true
-          # token: ${{ secrets.CODECOV_TOKEN }}  # uncomment for private repo
