@@ -38,9 +38,9 @@ jobs:
 
       - name: Capture coverage with lcov
         run: |
-          # generate raw coverage data
           cd build
-          lcov --directory . --capture --output-file coverage.info
+          # capture coverage using lcov, instruct geninfo to ignore certain warnings/errors
+          lcov --directory . --capture --output-file coverage.info --rc geninfo_unexecuted_blocks=1 --rc geninfo_ignore_errors=mismatch
           # remove system and third-party files from report
           lcov --remove coverage.info '/usr/*' '*/_deps/*' --output-file coverage.info
           lcov --list coverage.info
@@ -53,3 +53,4 @@ jobs:
           fail_ci_if_error: false
           verbose: true
           # token: ${{ secrets.CODECOV_TOKEN }}  # uncomment for private repo
+
