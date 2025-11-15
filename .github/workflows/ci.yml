@@ -38,9 +38,8 @@ jobs:
       - name: Capture coverage with lcov
         run: |
           cd build
-          # capture coverage using lcov, instruct geninfo to ignore certain warnings/errors
-          lcov --directory . --capture --output-file coverage.info --rc geninfo_unexecuted_blocks=1 --rc geninfo_ignore_errors=mismatch
-          # remove system and third-party files from report
+          # be tolerant: ignore mismatched end line warnings completely
+          lcov --directory . --capture --output-file coverage.info --rc geninfo_unexecuted_blocks=1 --rc geninfo_ignore_errors=mismatch --ignore-errors mismatch
           lcov --remove coverage.info '/usr/*' '*/_deps/*' --output-file coverage.info
           lcov --list coverage.info
         working-directory: .
@@ -51,3 +50,4 @@ jobs:
           files: build/coverage.info
           fail_ci_if_error: false
           verbose: true
+
