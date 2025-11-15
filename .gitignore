@@ -1,0 +1,23 @@
+﻿# Build artifacts
+/build/
+CMakeFiles/
+CMakeCache.txt
+Testing/
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.log
+
+# IDE settings
+.vscode/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+*.gcda
+*.gcno
+*.info
