@@ -25,7 +25,7 @@ The **Banking Management System** is a simple C++ project that allows users to:
 - View account details
 - Delete or modify existing accounts  
 
-This project is perfect for beginners learning **C++ classes, structures, vectors, and data storage**.
+This project is perfect for beginners learning **C++ classes, structures, vectors, and data storage**
 
 ---
 
