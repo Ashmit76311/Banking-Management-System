@@ -5,7 +5,7 @@
 A modern, menu-driven **C++ console application** that simulates basic banking operations like account creation, deposits, withdrawals, and balance inquiries.  
 This project demonstrates strong **Object-Oriented Programming (OOP)** concepts, file handling, and structured code design in C++.
 
----
+----
 
 ## 📖 Table of Contents
 - [About](#-about)
